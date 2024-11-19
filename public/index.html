@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symulacja płatności kartą</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form id="payment-form">
+    <label for="payment-method">Wybierz metodę płatności:</label>
+    <select id="payment-method">
+        <option value="creditCard">Karta kredytowa</option>
+        <option value="paypal">PayPal</option>
+        <!-- Można łatwo dodać nowe metody -->
+    </select>
+
+    <div class="container">
+
+    <div id="credit-card-fields">
+        <label for="card-number">Numer karty:</label>
+        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+
+        <label for="expiry-date">Data ważności:</label>
+        <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+        <label for="cvv">CVV:</label>
+        <input type="password" id="cvv" placeholder="123" required>
+    </div>
+
+    <div id="paypal-fields" style="display: none;">
+        <label for="paypal-email">Email PayPal:</label>
+        <input type="email" id="paypal-email" placeholder="example@mail.com">
+    </div>
+
+    <label for="amount">Kwota:</label>
+    <input type="number" id="amount" placeholder="100.00" required>
+
+    <button type="submit">Zapłać</button>
+    </form>
+
+    </div>
+    <br/>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>
